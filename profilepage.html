@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostStream | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+     
+     :root {
+  --primary-color: #04336b;
+  --secondary-color: hsl(213, 92%, 15%);
+  --transparent: rgba(4, 51, 107, 0.5);
+  --light-color: #e6ebf0;
+  --second-light: #cdd6e1;
+  --heading-fonts: "Poppins", sans-serif;
+  --body-fonts: "Inter", sans-serif;
+  --yellow-color: #fad02c;
+  --transition: all 0.3s linear;
+}
+
+
+
+.profile-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  position: relative;
+  height: 200px;
+}
+
+.profile-cover-photo {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( to right , #04336b, hsl(213, 92%, 15%));
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-avatar {
+  position: absolute;
+  bottom: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid white;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  padding: 60px 50px 40px;
+  text-align: center;
+}
+
+.profile-name {
+  font-family: var(--heading-fonts);
+  font-size: 2rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+
+.profile-bio {
+  font-size: 1rem;
+  color: var(--transparent);
+  margin-bottom: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--transparent);
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: var(--heading-fonts);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-secondary {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--second-light);
+  cursor: pointer;
+}
+
+.update-profile-form {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+}
+
+
+.update-profile-form h2 {
+  font-family: var(--heading-fonts);
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--second-light);
+  border-radius: 5px;
+  font-family: var(--body-fonts);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.recent-posts {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.recent-posts h2 {
+  font-family: var(--heading-fonts);
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.post-cards {
+  display: flex;
+}
+.postusers{
+  display: flex;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.post-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.post-card h3 {
+  font-family: var(--heading-fonts);
+  font-size: 1.1rem;
+  margin: 10px;
+  color: var(--primary-color);
+}
+
+.post-card p {
+  font-size: 0.9rem;
+  margin: 0 10px 10px;
+  color: var(--transparent);
+}
+.overlay-form{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .profile-container,
+  .update-profile-form,
+  .recent-posts {
+    margin: 20px 10px;
+  }
+
+  .profile-avatar {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .profile-info {
+    padding: 70px 20px 30px;
+  }
+
+  .profile-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+     .update-profile-form {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.update-profile-form h2 {
+  font-family: var(--heading-fonts);
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--second-light);
+  border-radius: 5px;
+  font-family: var(--body-fonts);
+}
+
+.form-group input[type="file"] {
+  padding: 5px;
+}
+
+.file-preview {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  background-color: var(--light-color);
+  border: 1px dashed var(--secondary-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--transparent);
+}
+
+.file-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .update-profile-form {
+    margin: 20px 10px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sideBar">
+        <div class="side-menu-wrapper">
+          <!-- Logo Section -->
+          <div>
+            <img class="logo" src="/images/whitelogo.png" alt="logo" />
+          </div>
+
+          <!-- Navigation Menu -->
+          <div>
+            <ul class="sideBar__nav--items">
+              <a href="/home.html">
+                <li class="sidebar__nav--lists active">
+                  <span class="nav-icons"> <i class="fas fa-home"></i></span>
+                  <span>Home</span>
+                </li>
+              </a>
+              <a href="/about.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <span>About Us</span>
+                </li>
+              </a>
+              <a href="/plans.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-crown"></i></span>
+                  <span>Plans</span>
+                </li>
+              </a>
+              <a href="/mypoints.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-coins"></i></span>
+                  <span>My Points</span>
+                </li>
+              </a>
+              <a href="/promote.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons">
+                    <i class="fas fa-bullhorn"></i
+                  ></span>
+                  <span>Promote</span>
+                </li>
+              </a>
+              <a href="/contact.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-phone"></i></span>
+                  <span>Contact Us</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+
+          <!-- Sidebar Call to Action and Settings -->
+        </div>
+        <div class="sidebar-cta">
+          <!-- Upgrade to Pro Section -->
+          <a href="/plans.html">
+            <div class="upgrade">
+              <span>Upgrade to Pro</span>
+              <p><i class="fas fa-crown"></i></p>
+            </div>
+          </a>
+
+          <!-- Settings and Profile Section -->
+          <div>
+            <ul>
+              <a href="/profilepage.html">
+                <li class="sidebar__nav--lists update">
+                  <i class="fas far fa-user"></i>
+                  <span>Profile</span>
+                </li>
+              </a>
+              <li class="Logout-wrapper">
+                <img class="profil-image" src="/images/profil.png" alt="" />
+                <span class="LogoutText">Logout</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!---the sidebar section of the dashboard-->
+
+      <!---the main section of the dashboard-->
+      <div class="main">
+        <!---the header section of the dashboard-->
+        <div class="header">
+          <div class="searchBar">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="searchBar-input"
+            />
+            <span class="searchIcon">
+              <i class="fas fas fa-search"></i>
+            </span>
+          </div>
+          <a href="/addpost.html"> <span class="addpostBTn">Add Post</span></a>
+          <div class="notis">
+            <i class="fas fas fa-bell"></i>
+            <span class="notis-counter">9</span>
+          </div>
+          <div class="user-profil">
+            <img
+              src="/images/userprofi1.jpg"
+              alt="userAvater from Freepik"
+              srcset=""
+            />
+          </div>
+        </div>
+
+        <!--- section1  recents Posts  of the dashboard-->
+        <div class="profile-container">
+          
+        </div>
+        
+        <div class="overlay-form">
+          <div class="update-profile-form" id="update-profile-form">
+            <h2>Update Profile</h2>
+            <form>
+              <div class="form-group">
+                <label for="profile-photo">Profile Photo</label>
+                <input type="file" id="profile-photo" name="profile-photo" accept="image/*">
+              
+              </div>
+              <div class="form-group">
+                <label for="cover-photo">Cover Photo</label>
+                <input type="file" id="cover-photo" name="cover-photo" accept="image/*">
+               
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="3"></textarea>
+              </div>
+              
+              
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary" id="cancel-edit">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+       <script type="module" src="/jsfiles/profile.js"></script>
+       
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

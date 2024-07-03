@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Our Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #04336b;
+        --secondary-color: hsl(213, 92%, 15%);
+        --transparent: rgba(4, 51, 107, 0.5);
+        --light-color: #e6ebf0;
+        --second-light: #cdd6e1;
+        --heading-fonts: "Poppins", sans-serif;
+        --body-fonts: "Inter", sans-serif;
+        --yellow-color: #fad02c;
+        --transition: all 0.3s linear;
+      }
+
+      body {
+        font-family: var(--body-fonts);
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-color);
+        color: var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .register-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 0px var(--transparent);
+        width: 300px;
+      }
+
+      h1 {
+        font-family: var(--heading-fonts);
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+        color: var(--secondary-color);
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid var(--second-light);
+        border-radius: 5px;
+        font-family: var(--body-fonts);
+      }
+
+      button {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: var(--heading-fonts);
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      button:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .links {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .links a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: var(--transition);
+      }
+
+      .links a:hover {
+        color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register-container">
+      <h1>Register</h1>
+      <form>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+
+        <button id="registerBtn" type="submit">Register</button>
+      </form>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+
+    <script type="module" src="./jsfiles/register.js"></script>
+  </body>
+</html>

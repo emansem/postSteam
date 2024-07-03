@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Post Page with Promoted Posts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #04336b;
+            --secondary-color: hsl(213, 92%, 15%);
+            --transparent: rgba(4, 51, 107, 0.5);
+            --light-color: #e6ebf0;
+            --second-light: #cdd6e1;
+            --heading-fonts: "Poppins", sans-serif;
+            --body-fonts: "Inter", sans-serif;
+            --yellow-color: #fad02c;
+            --transition: all 0.3s linear;
+        }
+
+        body {
+            font-family: var(--body-fonts);
+            background-color: var(--light-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px var(--transparent);
+            margin-bottom: 20px;
+        }
+
+        .post-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid var(--second-light);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: 600;
+        }
+
+        .post-time, .post-day {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+
+        .follow-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .post-card__body {
+            padding: 15px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .post-card__footer {
+            padding: 15px;
+            border-top: 1px solid var(--second-light);
+        }
+
+        .post-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .post-action {
+            display: flex;
+            align-items: center;
+        }
+
+        .post-action i {
+            margin-right: 5px;
+        }
+
+        .promoted-posts {
+            background-color: var(--yellow-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .promoted-posts h2 {
+            color: var(--primary-color);
+            font-family: var(--heading-fonts);
+            margin-bottom: 20px;
+        }
+
+        .promoted-cards {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .promoted-card {
+            flex: 0 0 auto;
+            width: 250px;
+            margin-right: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .promoted-card:last-child {
+            margin-right: 0;
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: var(--heading-fonts);
+        }
+
+        .cta-button {
+            background-color: var(--yellow-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background-color: white;
+        }
+
+        .email-subscribe {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .email-subscribe h2 {
+            color: var(--primary-color);
+            font-family: var(--heading-fonts);
+        }
+
+        .email-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .email-input {
+            padding: 10px;
+            width: 60%;
+            border: 1px solid var(--second-light);
+            border-radius: 5px 0 0 5px;
+        }
+
+        .subscribe-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post-card">
+            <div class="post-card__header">
+                <div class="user-info">
+                    <img class="user-photo" src="/images/userprofi1.jpg" alt="User profile photo" />
+                    <div class="user-details">
+                        <span class="user-name">Eman Sem</span>
+                        <span class="post-time">12.00pm</span>
+                        <span class="post-day">Today</span>
+                    </div>
+                </div>
+                <button class="follow-btn">Follow</button>
+            </div>
+            <div class="post-card__body">
+                <img class="thumbnail" src="/images/post1.jpg" alt="Post thumbnail" />
+            </div>
+            <div class="post-card__footer">
+                <div class="post-title">The Power of AI 2024</div>
+                <div class="post-actions">
+                    <div class="post-action">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span class="like-count">0</span>
+                    </div>
+                    <div class="post-action">
+                        <i class="fas fa-share"></i>
+                        <span class="share-count">0</span>
+                    </div>
+                    <div class="post-action">
+                        <span class="gift-text">Gifts</span>
+                        <span class="gift-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="promoted-posts">
+            <h2>Promoted Posts</h2>
+            <div class="promoted-cards">
+                <div class="promoted-card post-card">
+                    <div class="post-card__header">
+                        <div class="user-info">
+                            <img class="user-photo" src="/images/user2.jpg" alt="User profile photo" />
+                            <div class="user-details">
+                                <span class="user-name">Alex Johnson</span>
+                                <span class="post-time">2:30pm</span>
+                                <span class="post-day">Yesterday</span>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                    <div class="post-card__body">
+                        <img class="thumbnail" src="/images/promoted1.jpg" alt="Promoted post thumbnail" />
+                    </div>
+                    <div class="post-card__footer">
+                        <div class="post-title">AI in Healthcare: 2024 Breakthroughs</div>
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="like-count">245</span>
+                            </div>
+                            <div class="post-action">
+                                <i class="fas fa-share"></i>
+                                <span class="share-count">57</span>
+                            </div>
+                            <div class="post-action">
+                                <span class="gift-text">Gifts</span>
+                                <span class="gift-count">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promoted-card post-card">
+                    <div class="post-card__header">
+                        <div class="user-info">
+                            <img class="user-photo" src="/images/user3.jpg" alt="User profile photo" />
+                            <div class="user-details">
+                                <span class="user-name">Sarah Lee</span>
+                                <span class="post-time">9:15am</span>
+                                <span class="post-day">Today</span>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                    <div class="post-card__body">
+                        <img class="thumbnail" src="/images/promoted2.jpg" alt="Promoted post thumbnail" />
+                    </div>
+                    <div class="post-card__footer">
+                        <div class="post-title">The Future of AI in Education</div>
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="like-count">189</span>
+                            </div>
+                            <div class="post-action">
+                                <i class="fas fa-share"></i>
+                                <span class="share-count">42</span>
+                            </div>
+                            <div class="post-action">
+                                <span class="gift-text">Gifts</span>
+                                <span class="gift-count">8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="promoted-card post-card">
+                    <div class="post-card__header">
+                        <div class="user-info">
+                            <img class="user-photo" src="/images/user4.jpg" alt="User profile photo" />
+                            <div class="user-details">
+                                <span class="user-name">Mike Chen</span>
+                                <span class="post-time">11:45am</span>
+                                <span class="post-day">Today</span>
+                            </div>
+                        </div>
+                        <button class="follow-btn">Follow</button>
+                    </div>
+                    <div class="post-card__body">
+                        <img class="thumbnail" src="/images/promoted3.jpg" alt="Promoted post thumbnail" />
+                    </div>
+                    <div class="post-card__footer">
+                        <div class="post-title">AI and Climate Change: New Solutions</div>
+                        <div class="post-actions">
+                            <div class="post-action">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span class="like-count">302</span>
+                            </div>
+                            <div class="post-action">
+                                <i class="fas fa-share"></i>
+                                <span class="share-count">78</span>
+                            </div>
+                            <div class="post-action">
+                                <span class="gift-text">Gifts</span>
+                                <span class="gift-count">15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to start your journey?</h2>
+            <p>Join our community and explore the world of AI!</p>
+            <button class="cta-button">Get Started Now</button>
+        </div>
+
+        <div class="email-subscribe">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest AI news and updates.</p>
+            <form class="email-form">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

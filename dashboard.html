@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostStream | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sideBar">
+        <div class="side-menu-wrapper">
+          <!-- Logo Section -->
+          <div>
+            <img class="logo" src="/images/whitelogo.png" alt="logo" />
+          </div>
+      
+          <!-- Navigation Menu -->
+          <div>
+            <ul class="sideBar__nav--items">
+              <a href="/home.html">
+                <li class="sidebar__nav--lists active">
+                  <span class="nav-icons"> <i class="fas fa-home"></i></span>
+                  <span>Home</span>
+                </li>
+              </a>
+              <a href="/about.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <span>About Us</span>
+                </li>
+              </a>
+              <a href="/plans.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-crown"></i></span>
+                  <span>Plans</span>
+                </li>
+              </a>
+              <a href="/mypoints.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-coins"></i></span>
+                  <span>My Points</span>
+                </li>
+              </a>
+              <a href="/promote.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-bullhorn"></i></span>
+                  <span>Promote</span>
+                </li>
+              </a>
+              <a href="/contact.html">
+                <li class="sidebar__nav--lists">
+                  <span class="nav-icons"> <i class="fas fa-phone"></i></span>
+                  <span>Contact Us</span>
+                </li>
+              </a>
+            </ul>
+          </div>
+      
+          <!-- Sidebar Call to Action and Settings -->
+        </div>
+        <div class="sidebar-cta">
+          <!-- Upgrade to Pro Section -->
+          <a href="/plans.html">
+            <div class="upgrade">
+              <span>Upgrade to Pro</span>
+              <p><i class="fas fa-crown"></i></p>
+            </div>
+          </a>
+      
+          <!-- Settings and Profile Section -->
+          <div>
+            <ul>
+              <a href="/profilepage.html">
+                <li class="sidebar__nav--lists update">
+                  <i class="fas far fa-user"></i>
+                  <span>Profile</span>
+                </li>
+              </a>
+              <li class="Logout-wrapper">
+                <img class="profil-image" src="/images/profil.png" alt="" />
+                <span class="LogoutText">Logout</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!---the sidebar section of the dashboard-->
+
+      <!---the main section of the dashboard-->
+      <div class="main">
+        <!---the header section of the dashboard-->
+        <div class="header">
+          <div class="searchBar">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="searchBar-input"
+            />
+            <span class="searchIcon">
+              <i class="fas fas fa-search"></i>
+            </span>
+          </div>
+        <a href="/addpost.html">  <span class="addpostBTn" >Add Post</span></a>
+          <div class="notis">
+            <i class="fas fas fa-bell"></i>
+            <span class="notis-counter">9</span>
+          </div>
+          <div class="user-profil">
+            <img
+              src="/images/userprofi1.jpg"
+              alt="userAvater from Freepik"
+              srcset=""
+            />
+          </div>
+        </div>
+
+        <!--- section1  recents Posts  of the dashboard-->
+
+        <section class="section1">
+          <h1 class="primary-heading">Recents Post</h1>
+          <div class="homepage-post">
+            <div class="post-card">
+                <div class="post-card__header">
+                  <div class="user-info">
+                    <img class="user-photo" src="/images/avata1.png" alt="User profile photo" />
+                    <div class="user-details">
+                      <span class="user-name">Eman Sem</span>
+                      <span class="post-time">12.00pm</span>
+                      <span class="post-day">Today</span>
+                    </div>
+                  </div>
+                  <button class="follow-btn">Follow</button>
+                </div>
+                <div class="post-card__body">
+                  <img class="thumbnail" src="/images/userprofi1.jpg" alt="Post thumbnail" />
+                </div>
+                <div class="post-card__footer">
+                  <div class="post-title">The Power of AI 2024</div>
+                  <div class="post-actions">
+                    <div class="post-action">
+                      <i class="fas fa-thumbs-up"></i>
+                      <span class="like-count">0</span>
+                    </div>
+                    <div class="post-action">
+                      <i class="fas fa-share"></i>
+                      <span class="share-count">0</span>
+                    </div>
+                    <div class="post-action">
+                      <span class="gift-text">Gifts</span>
+                      <span class="gift-count">0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="post-card">
+                  <div class="post-card__header">
+                    <div class="user-info">
+                      <img class="user-photo" src="/images/userprofi1.jpg" alt="User profile photo" />
+                      <div class="user-details">
+                        <span class="user-name">Eman Sem</span>
+                        <span class="post-time">12.00pm</span>
+                        <span class="post-day">Today</span>
+                      </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                  <div class="post-card__body">
+                    <img class="thumbnail" src="/images/post1.jpg" alt="Post thumbnail" />
+                  </div>
+                  <div class="post-card__footer">
+                    <div class="post-title">The Power of AI 2024</div>
+                    <div class="post-actions">
+                      <div class="post-action">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span class="like-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <i class="fas fa-share"></i>
+                        <span class="share-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <span class="gift-text">Gifts</span>
+                        <span class="gift-count">0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="post-card">
+                  <div class="post-card__header">
+                    <div class="user-info">
+                      <img class="user-photo" src="/images/userprofi1.jpg" alt="User profile photo" />
+                      <div class="user-details">
+                        <span class="user-name">Eman Sem</span>
+                        <span class="post-time">12.00pm</span>
+                        <span class="post-day">Today</span>
+                      </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                  <div class="post-card__body">
+                    <img class="thumbnail" src="/images/post1.jpg" alt="Post thumbnail" />
+                  </div>
+                  <div class="post-card__footer">
+                    <div class="post-title">The Power of AI 2024</div>
+                    <div class="post-actions">
+                      <div class="post-action">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span class="like-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <i class="fas fa-share"></i>
+                        <span class="share-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <span class="gift-text">Gifts</span>
+                        <span class="gift-count">0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="post-card">
+                  <div class="post-card__header">
+                    <div class="user-info">
+                      <img class="user-photo" src="/images/userprofi1.jpg" alt="User profile photo" />
+                      <div class="user-details">
+                        <span class="user-name">Eman Sem</span>
+                        <span class="post-time">12.00pm</span>
+                        <span class="post-day">Today</span>
+                      </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                  </div>
+                  <div class="post-card__body">
+                    <img class="thumbnail" src="/images/post1.jpg" alt="Post thumbnail" />
+                  </div>
+                  <div class="post-card__footer">
+                    <div class="post-title">The Power of AI 2024</div>
+                    <div class="post-actions">
+                      <div class="post-action">
+                        <i class="fas fa-thumbs-up"></i>
+                        <span class="like-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <i class="fas fa-share"></i>
+                        <span class="share-count">0</span>
+                      </div>
+                      <div class="post-action">
+                        <span class="gift-text">Gifts</span>
+                        <span class="gift-count">0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+              
+          </div>
+        </section>
+        <div class="email-subscribe">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest AI news and updates.</p>
+            <form class="email-form">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./jsfiles/login.js"></script>
+    
+</html>

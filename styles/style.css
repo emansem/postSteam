@@ -1,0 +1,470 @@
+/* decleration of general colors */
+
+/* Set base font size for the entire HTML document */
+html {
+  font-size: 80%;
+}
+body {
+  margin-top: 90px;
+  height: 100%;
+}
+
+/* Define custom CSS variables (root-level custom properties) */
+:root {
+  --primary-color: #04336b;
+  --secondary-color: hsl(213, 92%, 15%);
+  --transperent: rgba(4, 51, 107, 0.5);
+  --light-color: #e6ebf0;
+  --second-light: #cdd6e1;
+  --heading-fonts: "Poppins", sans-serif;
+  --body-fonts: "Inter", sans-serif;
+  --yellow-color: #fad02c;
+  --transition: all 0.3s linear;
+}
+
+/* Apply base styles to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  /* color: white;
+    font-family: var(--body-fonts); */
+}
+
+/* Container for layout, using flexbox */
+.container {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  font-size: 80%;
+}
+
+/* Sidebar section */
+.sideBar {
+  background-color: var(--secondary-color);
+  height: 100vh;
+  width: 18rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--heading-fonts);
+}
+
+/* Logo image in the sidebar */
+.logo {
+  width: 200px;
+}
+
+/* Sidebar navigation items */
+.sideBar__nav--items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Sidebar navigation lists */
+.sidebar__nav--lists {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 18px;
+  font-family: var(--heading-fonts);
+  color: var(--second-light);
+  cursor: pointer;
+  padding: 0.2rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Padding for the span inside navigation lists */
+.sidebar__nav--lists span {
+  padding: 0.2rem;
+}
+
+/* Hover and active state for navigation lists */
+.sidebar__nav--lists:hover,
+.active {
+  background-color: rgba(4, 51, 107, 0.5);
+  border-radius: 1rem;
+}
+
+/* Profile image in the sidebar */
+.profil-image {
+  width: 50px;
+}
+
+/* Main content section */
+.main {
+  background-color: #f2f2f2;
+  margin-left: 18rem;
+  flex: 1;
+  color: black;
+  height: 100vh;
+  padding: 0.4rem 2rem;
+  font-family: var(--body-fonts);
+}
+
+/* Upgrade section in the sidebar */
+.upgrade {
+  margin-bottom: 0.8rem;
+  background-color: var(--primary-color);
+  text-align: center;
+  border-radius: 0.8rem;
+  font-size: 22px;
+  color: var(--second-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Span inside the upgrade section */
+.upgrade span {
+  margin-top: 0.8rem;
+  display: block;
+  padding: 0.4rem;
+  background-color: var(--secondary-color);
+  width: 200px;
+  border-radius: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+/* Hover state for the span inside the upgrade section */
+.upgrade span:hover {
+  background-color: var(--transperent);
+  border: 1px solid var(--second-light);
+}
+
+/* Keyframes for the pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Paragraph inside the upgrade section with pulse animation */
+.upgrade p {
+  color: var(--yellow-color);
+  font-size: 2rem;
+  margin-block: 0.4rem;
+  animation: pulse 1.5s infinite;
+}
+
+/* Specific styles for crown and coins icons */
+.fa-crown,
+.fa-coins {
+  color: var(--yellow-color);
+}
+
+/* Update section */
+.update {
+  margin-block: 1rem;
+  border-radius: 1rem;
+}
+
+/* Logout section wrapper */
+.Logout-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 18px;
+  margin-block: 1rem;
+  padding-top: 1rem;
+  color: var(--second-light);
+  font-weight: 500;
+  border-top: 1px solid var(--light-color);
+}
+
+/* Logout text with cursor pointer */
+.LogoutText {
+  cursor: pointer;
+}
+
+/* the main section styles. */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid var(--light-color);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 18rem;
+  height: 80px;
+  z-index: 99;
+}
+.searchBar {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 0.8rem;
+  background-color: #f0f0f0;
+  border: 1px solid var(--second-light);
+  border-radius: 1.2rem;
+  font-family: var(--body-fonts);
+  color: #555;
+  font-size: 18px;
+  font-weight: 500;
+  flex: 1;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.searchIcon {
+  background-color: var(--secondary-color);
+  height: 42px;
+  padding: 0 0.8rem;
+  margin-left: -1rem;
+  border-top-right-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: var(--light-color);
+  cursor: pointer;
+}
+.user-profil img {
+  height: 70px;
+  border-radius: 3rem;
+  padding: 0.4rem;
+}
+.notis {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding: 0.8rem;
+  border-radius: 1.5rem;
+  font-size: 22px;
+  color: var(--primary-color);
+  cursor: pointer;
+  position: relative;
+}
+.notis-counter {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background-color: var(--yellow-color);
+  padding: 0.2rem 0.4rem;
+
+  /* display: inline-block;
+    /* height: 0.1rem; */
+
+  border-radius: 1.2rem;
+  right: 0;
+  font-weight: 600;
+}
+
+.primary-heading {
+  text-align: center;
+  padding-block: 1.3rem;
+  font-size: 3.5rem;
+  font-family: var(--heading-fonts);
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.section1 {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding: 0.8rem;
+}
+
+.homepage-post {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ 
+  width: 100%;
+  gap: 2rem;
+}
+
+
+.post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .post-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  .addpostBTn{
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    padding: 0.6rem 1.2rem;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 1.4rem;
+  }
+  
+  .user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .post-time, .post-day {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .follow-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .follow-btn:hover{
+    transform: scale(1.1);
+  }
+  .post-card__body {
+    width: 100%;
+  }
+  
+  .thumbnail {
+    width: 100%;
+    /* height: 300px; */
+   aspect-ratio: 16 / 12;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .post-card__footer {
+    /* padding: 15px; */
+    background-color: var(--secondary-color);
+    /* color: var(--second-light); */
+  }
+  
+  .post-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 15px;
+    color: #bebebe;
+  }
+  
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #bebebe;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .post-action {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+  }
+  .post-action:hover{
+    background-color: var(--transperent);
+   
+    border-radius: 1rem;
+
+  }
+  
+  .post-action i ,
+  .gift-text
+  
+  {
+    font-size: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: var(--light-color);
+    
+  }
+ 
+  
+  .like-count, .share-count, .gift-count {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--second-light);
+  }
+  .email-subscribe {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.email-subscribe h2 {
+    color: var(--primary-color);
+    font-family: var(--heading-fonts);
+}
+
+.email-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.email-input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid var(--second-light);
+    border-radius: 5px 0 0 5px;
+}
+
+.subscribe-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
